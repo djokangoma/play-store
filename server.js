@@ -3,7 +3,8 @@ const app = express();
 const mongoose = require("mongoose");
 
 const stuffRoutes = require("./routes/stuff");
-const userRoutes = require("./routes/user")
+const userRoutes = require("./routes/user");
+const path = require("path");
 
 mongoose
   .connect(
@@ -26,8 +27,8 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json());
+app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use("/api/auth", userRoutes);
 app.use("/api/stuff", stuffRoutes);
-
 
 app.listen(process.env.PORT || 3000);
