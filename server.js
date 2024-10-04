@@ -7,7 +7,7 @@ const userRoutes = require("./routes/user")
 
 mongoose
   .connect(
-    "mongodb+srv://djokangoma:kangoma7@cluster0.dbz7z.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    "mongodb+srv://djokangoma:kangoma7@cluster0.dbz7z.mongodb.net/store?retryWrites=true&w=majority&appName=Cluster0"
   )
   .then(() => console.log("Connexion à MongoDB réussie !"))
   .catch(() => console.log("Connexion à MongoDB échouée !"));
