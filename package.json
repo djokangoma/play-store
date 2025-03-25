@@ -15,5 +15,8 @@
     "url": "https://github.com/djokangoma/play-store/issues"
   },
   "homepage": "https://github.com/djokangoma/play-store#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
