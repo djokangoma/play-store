@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
+app.use(express.json());
+
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
@@ -9,12 +11,7 @@ app.use((req, res, next) => {
     next();
   });
   
-app.use((req,res)=>{
-    res.json({ message: "tu es une grande personne djo"})
-    console.log("kangoma");
-    
-})
-app.use('/api/stuff', (req, res, next) => {
+  app.get('/api/stuff', (req, res, next) => {
     const stuff = [
       {
         _id: 'oeihfzeoi',
@@ -36,6 +33,12 @@ app.use('/api/stuff', (req, res, next) => {
     res.status(200).json(stuff);
   });
 
+  app.post('/api/stuff', (req, res, next) => {
+    console.log(req.body);
+    res.status(201).json({
+      message: 'Objet créé ! par djo kangoma'
+    });
+  });
 
 app.listen(process.env.port || 3000)
 console.log("le serveur est en ecoute");
