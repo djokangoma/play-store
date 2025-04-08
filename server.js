@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 
 const app = express();
 const stuffRoutes = require('./routes/stuff');
+const userRoutes = require('./routes/user');
 
 const port = 3000;
 
@@ -21,6 +22,7 @@ app.use((req, res, next) => {
   });
 
 app.use('/api/stuff', stuffRoutes);
+app.use('/api/auth' , userRoutes);
   
 app.listen(process.env.port || 3000)
 console.log("le serveur est en ecoute");

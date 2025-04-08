@@ -17,6 +17,7 @@
   "homepage": "https://github.com/djokangoma/play-store#readme",
   "description": "",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "express": "^4.21.2",
     "mongoose": "^7.8.6",
     "mongoose-unique-validator": "^4.0.1"
